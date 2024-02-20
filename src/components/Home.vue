@@ -9,15 +9,15 @@
         </div>
       </div>
       <!-- Produits et sections intercalées -->
-      <template v-for="(product, index) in products" :key="product.name">
-        <div class="card product-card">
+      <template v-for="(product, index) in products" :key="product.name" >
+        <div class="card product-card" >
           <img :src="getImagePath(product.image)" :alt="product.name" class="w-full">
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">{{ product.name }}</h3>
             <p class="text-gray-700 text-base">{{ product.description }}</p>
           </div>
         </div>
-        <div v-if="index === 3" class="card info-card larger p-4">
+        <div v-if="index === 3" class="card info-card larger p-4" >
           <h2 class="text-4xl font-bold mb-4 hover:underline">Design & Urbain</h2>
           <p class="max-w-full p-4 ">Pototop a pour mission d'apporter l'art de vivre à la française dans les rues avec notre design de table innovant et modulaire, parfait pour les explorateurs urbains et les amateurs de plein air.</p>
         </div>
@@ -47,24 +47,20 @@
         <h2 class="text-3xl font-bold mb-4">Top</h2>
         <div class="text-xl">
           <div class="flex items-center">
-            <div class="w-6 h-4 underline bg-red-500 rounded-full animate-pulse mr-2"></div>
-            Plateau customisable
-          </div>
-          <div class="flex items-center">
             <div class="w-12 h-4 bg-green-500 rounded-full animate-pulse mr-2"></div>
             <strong>Montage 10s</strong>
+          </div>
+          <div class="flex items-center">
+            <div class="w-6 h-4 underline bg-red-500 rounded-full animate-pulse mr-2"></div>
+            Plateau customisable
           </div>
           <div class="flex items-center">
             <div class="w-24 h-4 bg-blue-500 rounded-full animate-pulse mr-2"></div>
             <strong>Livraison gratuite Paris & RP</strong>
           </div>
-          <div class="flex items-center">
-            <div class="w-48 h-4 bg-yellow-500 rounded-full animate-pulse mr-2"></div>
-            Customisable
-          </div>
           <!-- Phone Number on Separate Line -->
-          <div class="mt-12 flex flex-col justify-center bg-pink-500 text-slate-100 rounded-lg p-4">
-            <div class="text-xl font-medium mb-2">Demande de devis et renseignement :</div>
+          <div class="mt-12 flex flex-col justify-center bg-green-500 text-slate-100 rounded-lg p-4">
+            <div class="text-xl font-medium mb-2">Demande de devis et renseignement:</div>
             <div class="text-2xl font-bold"> <span class="ml-2">06.13.13.12.12</span></div>
           </div>
         </div>
@@ -73,10 +69,13 @@
       <div class="card product-card p-8">
 
         <h2 class="text-xl font-bold mb-12">Conçu et fabriqué en France</h2>
-        <p>Pototop© est une marque déposée</p>
-        <p>tous droits réservés - 2024</p>
+        <p class="text-sm">Pototop© est une marque déposée</p>
+        <p class="text-sm">Tous droits réservés - 2024</p>
         <img src="/assets/POTOSMILE-B.png" alt="Pototop Logo" class="mx-auto mb-12 w-32 mt-4">
-        <p class="font-sm">Site par GUI.</p>
+        <p class="text-xs">Le logo POTOSMILE est déposé</p>
+        <p class="text-xs">
+      Site par <a href="https://guillaumelaine.com" target="_blank" rel="noopener noreferrer">GUI.X</a>
+    </p>
       </div>
       
     </div>
@@ -104,7 +103,7 @@ export default {
     // Method to apply the hover effect
     function hoverEffect(event) {
       event.currentTarget.style.borderColor = getRandomColor();
-      event.currentTarget.style.borderWidth = '2px';
+      event.currentTarget.style.borderWidth = '22px';
       event.currentTarget.style.borderStyle = 'solid';
     }
 
@@ -158,11 +157,9 @@ export default {
 /* Card General Styles */
 .card {
   background: #fff;
-  /* border-radius: 8px; */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  /* margin-bottom: 16px; */
   transition: transform 0.3s ease;
-  overflow: hidden; /* Ensures content fits within the rounded corners */
+  overflow: hidden;
 }
 
 /* Specific Card Styles */
@@ -184,7 +181,7 @@ export default {
 
 /* Info Card Styles */
 .info-card {
-  padding: 2rem; /* Increased padding for readability */
+  padding: 2rem;
 }
 
 .info-card h2, .info-card p, .info-card ul {
@@ -199,18 +196,18 @@ export default {
 
 /* Highlighting Important Information */
 .highlight {
-  color: #007BFF; /* Highlight color */
+  color: #007BFF; 
   font-weight: bold;
 }
 
 /* Hover Effect for Cards */
 .card:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
+  transform: translateY(-5px); 
 }
 
 /* Styling for Important List Items */
 .info-card li strong {
-  font-weight: bold; /* Emphasize key points */
+  font-weight: bold; 
 }
 
 /* Testimonial Card Styles */
