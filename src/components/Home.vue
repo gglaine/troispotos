@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen bg-blue-500 p-8">
+  <div class="min-h-screen bg-slate-700 p-0">
     <div class="masonry-grid">
       <!-- Header Card -->
-      <div class="card header-card larger bg-black" :style="{ backgroundImage: 'url(' + headerImageUrl + ')', backgroundColor: 'red', backgroundSize: '142%' }">
-        <div class=" text-white text-center p-8 rounded-lg">
+      <div class="card header-card larger flex flex-col justify-around items-center bg-white" >
+        <div class=" flex flex-col text-white text-center p-12 rounded-lg">
           <img src="/assets/POTOSMILE-B.png" alt="Pototop Logo" class="mx-auto mb-1 w-48">
           <p class="text-2xl text-slate-800 font-light mb-4">La ville est belle</p>
         </div>
@@ -18,15 +18,18 @@
           </div>
         </div>
         <div v-if="index === 3" class="card info-card larger p-4">
-          <h2 class="text-4xl font-bold mb-4">À propos de Pototop</h2>
-          <p>Pototop a pour mission d'apporter l'art de vivre à la française dans les rues avec notre design de table innovant et modulaire, parfait pour les explorateurs urbains et les amateurs de plein air.</p>
+          <h2 class="text-4xl font-bold mb-4 hover:underline">Design & Urbain</h2>
+          <p class="max-w-full p-4 ">Pototop a pour mission d'apporter l'art de vivre à la française dans les rues avec notre design de table innovant et modulaire, parfait pour les explorateurs urbains et les amateurs de plein air.</p>
         </div>
-        <div v-if="index === 7" class="card info-card larger p-4">
-          <h2 class="text-4xl font-bold text-center mb-4">1,2,3 ... Poto rentrant !</h2>
+        <div v-if="index === 7" class="card info-card larger flex flex-col justify-around" :style="{ backgroundImage: 'url(assets/impact.webp)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }">
+          <div class="bg-white p-4 rounded-sm opacity-85">
+            <h2 class="text-4xl font-bold text-center mb-4">Street Proof</h2>
           <p>Notre design breveté vous permet de clipser et sécuriser nos tables autour des poteaux de rue de Paris, offrant une surface stable et élégante en quelques secondes.</p>
+          </div>
+   
         </div>
         <div v-if="index === 9" class="card info-card larger p-4">
-          <h2 class="text-4xl font-bold text-center mb-4">Personnalisez-le</h2>
+          <h2 class="text-4xl font-bold text-center mb-4">Avec votre personnalité</h2>
         <p class="highlight">Notre design breveté vous permet de clipser et sécuriser nos tables autour des poteaux de rue de Paris, offrant une surface stable et élégante en quelques secondes.</p>
         </div>
       </template>
@@ -41,37 +44,38 @@
 
       <!-- Discover the T20 Card -->
       <div class="card info-card bg-white w-full rounded-lg shadow-md p-8 mb-4 transform transition-all duration-300 ease-in-out overflow-hidden hover:shadow-lg">
-        <h2 class="text-3xl font-bold mb-4">Découvrez la T20</h2>
+        <h2 class="text-3xl font-bold mb-4">Top</h2>
         <div class="text-xl">
           <div class="flex items-center">
-            <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse mr-2"></div>
+            <div class="w-6 h-4 underline bg-red-500 rounded-full animate-pulse mr-2"></div>
             Plateau customisable
           </div>
           <div class="flex items-center">
-            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
+            <div class="w-12 h-4 bg-green-500 rounded-full animate-pulse mr-2"></div>
             <strong>Montage 10s</strong>
           </div>
           <div class="flex items-center">
-            <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse mr-2"></div>
-            <strong>Livraison gratuite</strong>
+            <div class="w-24 h-4 bg-blue-500 rounded-full animate-pulse mr-2"></div>
+            <strong>Livraison gratuite Paris & RP</strong>
           </div>
           <div class="flex items-center">
-            <div class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse mr-2"></div>
-            Disponible à la vente ou en location-vente
+            <div class="w-48 h-4 bg-yellow-500 rounded-full animate-pulse mr-2"></div>
+            Customisable
           </div>
           <!-- Phone Number on Separate Line -->
-          <div class="mt-12 flex flex-col justify-center p-4">
-            <div class="text-xl font-medium text-gray-900 mb-2">Demande de devis et renseignement :</div>
-            <div class="text-2xl font-bold text-gray-900"> 📞 <span class="ml-2">06.13.13.12.12</span></div>
+          <div class="mt-12 flex flex-col justify-center bg-pink-500 text-slate-100 rounded-lg p-4">
+            <div class="text-xl font-medium mb-2">Demande de devis et renseignement :</div>
+            <div class="text-2xl font-bold"> <span class="ml-2">06.13.13.12.12</span></div>
           </div>
         </div>
       </div>
       <!-- Additional Cards for Features -->
       <div class="card product-card p-8">
-        <img src="/assets/POTOSMILE-B.png" alt="Pototop Logo" class="mx-auto mb-12 w-32 mt-4">
+
         <h2 class="text-xl font-bold mb-12">Conçu et fabriqué en France</h2>
         <p>Pototop© est une marque déposée</p>
         <p>tous droits réservés - 2024</p>
+        <img src="/assets/POTOSMILE-B.png" alt="Pototop Logo" class="mx-auto mb-12 w-32 mt-4">
         <p class="font-sm">Site par GUI.</p>
       </div>
       
@@ -148,15 +152,15 @@ export default {
 .masonry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
+  gap: 1px;
 }
 
 /* Card General Styles */
 .card {
   background: #fff;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   transition: transform 0.3s ease;
   overflow: hidden; /* Ensures content fits within the rounded corners */
 }
