@@ -61,7 +61,7 @@
           <!-- Phone Number on Separate Line -->
           <div class="mt-12 flex flex-col justify-center bg-green-500 text-slate-100 rounded-lg p-4">
             <div class="text-xl font-medium mb-2">Demande de devis et renseignement:</div>
-            <div class="text-2xl font-bold"> <span class="ml-2">06.13.13.12.12</span></div>
+            <div class="text-2xl font-bold"> <span class="ml-2">06.70.64.17.22</span></div>
           </div>
         </div>
       </div>
