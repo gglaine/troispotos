@@ -10,13 +10,13 @@
       </div>
       <!-- Produits et sections intercalées -->
       <template v-for="(product, index) in products" :key="product.name" >
-        <div class="card product-card" >
-          <img :src="getImagePath(product.image)" :alt="product.name" class="w-full">
-          <div class="p-6">
-            <h3 class="font-bold text-lg mb-2">{{ product.name }}</h3>
-            <p class="text-gray-700 text-base">{{ product.description }}</p>
-          </div>
-        </div>
+        <div class="card product-card" :class="{'cover-full-div': isEven(index)}" @mouseover="hoverEffect" @mouseleave="removeHoverEffect">
+  <img :src="getImagePath(product.image)" :alt="product.name" class="w-full">
+  <div class="p-6 product-info">
+    <h3 class="font-bold text-lg mb-2">{{ product.name }}</h3>
+    <p class="text-gray-700 text-base">{{ product.description }}</p>
+  </div>
+</div>
         <div v-if="index === 3" class="card info-card larger p-4" >
           <h2 class="text-4xl font-bold mb-4 hover:underline">Design & Urbain</h2>
           <p class="max-w-full p-4 ">Pototop a pour mission d'apporter l'art de vivre à la française dans les rues avec notre design de table innovant et modulaire, parfait pour les explorateurs urbains et les amateurs de plein air.</p>
@@ -89,6 +89,10 @@ export default {
   name: 'Home',
   setup() {
  
+    function isEven(index) {
+  // Returns true for even indexes (which are odd-numbered products)
+  return index % 2 === 1;
+}
 
     // Method to generate a random color
     function getRandomColor() {
@@ -103,7 +107,7 @@ export default {
     // Method to apply the hover effect
     function hoverEffect(event) {
       event.currentTarget.style.borderColor = getRandomColor();
-      event.currentTarget.style.borderWidth = '22px';
+      event.currentTarget.style.borderWidth = '2px';
       event.currentTarget.style.borderStyle = 'solid';
     }
 
@@ -120,7 +124,7 @@ export default {
     const products = ref([
 { name: 'Pototop High Flyer', description: 'A versatile table for urban spaces.', image: 'orangeboheme.jpg' },
 { name: 'Pototop Keith Me', description: 'Pop, Top, Urbain, inspiré du travail de keith Haring', image: 'pototop-keith.png' },
-{ name: 'Pototop Classic', description: 'Combinaison d\'élégance et de fonctionnalité', image: 'pototop 2.png' },
+{ name: 'Pototop Classic', description: 'Combinaison d\'élégance et de fonctionnalité', image: 'pototop 2.jpg' },
 { name: 'Pototop Eye', description: 'Tapez lui dans l\'oeil', image: 'pototop-eye.png' },
 { name: 'Poto Splash', description: 'Attention, ca va mouiller', image: 'poto-splash.png' },
 { name: 'Poto rizon', description: 'On va où aujourd\'hui', image: 'poto-solar.png' },
@@ -138,6 +142,7 @@ export default {
       getImagePath,
       hoverEffect,
       removeHoverEffect,
+      isEven
     };
   },
 };
@@ -166,10 +171,34 @@ export default {
 .header-card, .info-card {
   grid-column: span 2;
 }
+.cover-full-div img {
+  transition: opacity 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-full-div:hover .product-info {
+  opacity: 1;
+  visibility: visible; /* Ensure content is visible on hover */
+  /* Remove transform if not needed for a slide-up effect */
+}
+
+.product-info {
+  position: absolute;
+  width: 100%; /* Ensure full width coverage */
+  bottom: 0; /* Align to bottom */
+  left: 0;
+  background-color: rgba(255,255,255,0.9); /* Semi-transparent background */
+  transition: opacity 0.5s, visibility 0.5s; /* Smooth transition for visibility */
+  opacity: 0;
+  visibility: hidden; /* Initially hidden */
+  padding: 1rem; /* Adequate padding for content */
+}
 
 .product-card {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Responsive Adjustments */
