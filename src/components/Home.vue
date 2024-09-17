@@ -1,85 +1,204 @@
 <template>
-  <div class="min-h-screen bg-slate-700 p-0">
-    <div class="masonry-grid">
-      <!-- Header Card -->
-      <div class="card header-card larger flex flex-col justify-around items-center bg-white" >
-        <div class=" flex flex-col text-white text-center p-12 rounded-lg">
-          <img src="/assets/POTOSMILE-B.png" alt="Pototop Logo" class="mx-auto mb-1 w-48">
-          <p class="text-2xl text-slate-800 font-light mb-4">La ville est belle</p>
-        </div>
-      </div>
-      <!-- Produits et sections intercalées -->
-      <template v-for="(product, index) in products" :key="product.name" >
-        <div class="card product-card" :class="{'cover-full-div': isEven(index)}" @mouseover="hoverEffect" @mouseleave="removeHoverEffect">
-  <img :src="getImagePath(product.image)" :alt="product.name" class="w-full">
-  <div class="p-6 product-info">
-    <h3 class="font-bold text-lg mb-2">{{ product.name }}</h3>
-    <p class="text-gray-700 text-base">{{ product.description }}</p>
+<!-- Thrilling Interactive Homepage -->
+<section class="homepage-experience relative overflow-hidden">
+  <!-- Hero Section: Fullscreen Video Background with Interactive Elements -->
+  <div class="hero-section relative h-screen bg-black text-white flex items-center justify-center">
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+    <source src="/top-o-pop.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay absolute inset-0 bg-black opacity-50"></div>
+  
+  <!-- This is the text content stuck to the bottom -->
+  <div class="z-10 text-center absolute bottom-10 left-0 right-0">
+    <h1 class="text-6xl font-bold mb-4 animate-fade-in">Pototop, au coeur de la ville</h1>
+    <p class="text-2xl mb-6 animate-fade-in delay-1s">Transformez vos espaces avec style et innovation</p>
+    <a href="#features" class="text-lg px-8 py-4 border border-white rounded-lg hover:bg-white hover:text-black transition-all">
+      Explorez les Possibilités
+    </a>
+  </div>
+  
+  <div class="scroll-indicator absolute bottom-5 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
   </div>
 </div>
-        <div v-if="index === 3" class="card info-card larger p-4" >
-          <h2 class="text-4xl font-bold mb-4 hover:underline">Design & Urbain</h2>
-          <p class="max-w-full p-4 ">Pototop a pour mission d'apporter l'art de vivre à la française dans les rues avec notre design de table innovant et modulaire, parfait pour les explorateurs urbains et les amateurs de plein air.</p>
-        </div>
-        <div v-if="index === 7" class="card info-card larger flex flex-col justify-around" :style="{ backgroundImage: 'url(assets/impact.webp)', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }">
-          <div class="bg-white p-4 rounded-sm opacity-85">
-            <h2 class="text-4xl font-bold text-center mb-4">Street Proof</h2>
-          <p>Notre design breveté vous permet de clipser et sécuriser nos tables autour des poteaux de rue de Paris, offrant une surface stable et élégante en quelques secondes.</p>
-          </div>
-   
-        </div>
-        <div v-if="index === 9" class="card info-card larger p-4">
-          <h2 class="text-4xl font-bold text-center mb-4">Avec votre personnalité</h2>
-        <p class="highlight">Notre design breveté vous permet de clipser et sécuriser nos tables autour des poteaux de rue de Paris, offrant une surface stable et élégante en quelques secondes.</p>
-        </div>
-      </template>
 
-      <div class="card info-card p-8 flex items-center larger">
-        <img src="/assets/fred.jpg" alt="Avatar du fondateur" class="w-48 h-64 rounded-sm mr-4">
-        <div>
-          <p class="text-xl max-w-48  font-bold">Fred Margot, créateur de pototop</p>
-          <p class="text-xl max-w-64 text-slate-800  font-medium"><q>Lancer POTOTOP a été un parcours d'innovation et de passion. Notre objectif est de révolutionner les espaces de vie urbains, un meuble à la fois."</q></p>
+
+
+<!-- Interactive Feature Section: Floating, Draggable Cards -->
+<section id="features" class="relative py-20 bg-gray-100">
+  <h2 class="text-5xl text-center font-bold mb-12">Découvrez Nos Solutions Modulaires</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    
+    <!-- Table for Events -->
+    <div class="card interactive-card bg-cover bg-center relative cursor-grab"
+         style="background-image: url('/assets/table/clap.jpg'); height: 400px; background-size: cover; background-position: center;" draggable="true">
+      <!-- Overlay for better text legibility -->
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
+        <div class="text-center text-white z-10">
+          <h3 class="text-3xl font-bold text-shadow">Table Haute pour Événements</h3>
+          <p class="mt-2 text-shadow">Idéale pour les événements en extérieur, elle s'adapte aux espaces urbains tout en offrant une fonctionnalité optimale.</p>
         </div>
       </div>
+    </div>
 
-      <!-- Discover the T20 Card -->
-      <div class="card info-card bg-white w-full rounded-lg shadow-md p-8 mb-4 transform transition-all duration-300 ease-in-out overflow-hidden hover:shadow-lg">
-        <h2 class="text-3xl font-bold mb-4">Top</h2>
-        <div class="text-xl">
-          <div class="flex items-center">
-            <div class="w-12 h-4 bg-green-500 rounded-full animate-pulse mr-2"></div>
-            <strong>Montage 10s</strong>
-          </div>
-          <div class="flex items-center">
-            <div class="w-6 h-4 underline bg-red-500 rounded-full animate-pulse mr-2"></div>
-            Plateau customisable
-          </div>
-          <div class="flex items-center">
-            <div class="w-24 h-4 bg-blue-500 rounded-full animate-pulse mr-2"></div>
-            <strong>Livraison gratuite Paris & RP</strong>
-          </div>
-          <!-- Phone Number on Separate Line -->
-          <div class="mt-12 flex flex-col justify-center bg-green-500 text-slate-100 rounded-lg p-4">
-            <div class="text-xl font-medium mb-2">Demande de devis et renseignement:</div>
-            <div class="text-2xl font-bold"> <span class="ml-2">06.70.64.17.22</span></div>
-          </div>
+    <!-- Versatile Tabletop -->
+    <div class="card interactive-card bg-cover bg-center relative cursor-grab"
+         style="background-image: url('/assets/table/pontivy.jpg'); height: 400px; background-size: cover; background-position: center;" draggable="true">
+      <!-- Overlay for better text legibility -->
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
+        <div class="text-center text-white z-10">
+          <h3 class="text-3xl font-bold text-shadow">Tablettes Polyvalentes</h3>
+          <p class="mt-2 text-shadow">Fixez nos tablettes sur potelets pour un usage commercial ou récréatif, optimisant l’espace tout en captant l’attention.</p>
         </div>
       </div>
-      <!-- Additional Cards for Features -->
-      <div class="card product-card p-8">
+    </div>
 
-        <h2 class="text-xl font-bold mb-12">Conçu et fabriqué en France</h2>
-        <p class="text-sm">Pototop© est une marque déposée</p>
-        <p class="text-sm">Tous droits réservés - 2024</p>
-        <img src="/assets/POTOSMILE-B.png" alt="Pototop Logo" class="mx-auto mb-12 w-32 mt-4">
-        <p class="text-xs">Le logo POTOSMILE est déposé</p>
-        <p class="text-xs">
-      Site par <a href="https://guillaumelaine.com" target="_blank" rel="noopener noreferrer">GUI.X</a>
-    </p>
+    <!-- Interactive Game Table -->
+    <div class="card interactive-card bg-cover bg-center relative cursor-grab"
+         style="background-image: url('/assets/table/clac.jpg'); height: 400px; background-size: cover; background-position: center;" draggable="true">
+      <!-- Overlay for better text legibility -->
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
+        <div class="text-center text-white z-10">
+          <h3 class="text-3xl font-bold text-shadow">Jeux et Sports</h3>
+          <p class="mt-2 text-shadow">Transformez les espaces publics en aires de jeux grâce à des supports conçus pour le football, le rugby, et même le tennis.</p>
+        </div>
       </div>
-      
     </div>
   </div>
+
+  <!-- Marketing Info Tooltip Section -->
+  <div class="text-center mt-12 text-lg">
+    <p>Glissez les cartes pour explorer nos offres modulaires. Chaque configuration est conçue pour optimiser votre espace et répondre à vos besoins.</p>
+  </div>
+</section>
+
+
+  <!-- Parallax Scrolling Section: Storytelling through Layers -->
+  <section class="parallax-section relative overflow-hidden h-screen bg-gray-900 text-white">
+    <div class="layer-bg absolute top-0 left-0 w-full h-full bg-fixed" style="background-image: url('/assets/table/pontivy.jpg'); background-size: cover; background-position: center -500;"></div>
+    <div class="content absolute z-10 top-1/2 transform -translate-y-1/2 text-center w-full">
+      <h2 class="text-5xl font-bold mb-4">Créez l'Impact</h2>
+      <p class="text-xl max-w-3xl mx-auto">Les espaces urbains sont bien plus que des lieux de passage. Nos solutions vous permettent de transformer les villes en expériences dynamiques et mémorables.</p>
+    </div>
+  </section>
+
+  <!-- Creative Responsive Grid Section -->
+<section class="image-grid-section py-20 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12">Inspiration Visuelle</h2>
+    <div class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 grid-auto-rows">
+      <!-- Image 1 -->
+      <div class="relative overflow-hidden aspect-w-3 aspect-h-2 hover:scale-105 transform transition-all duration-300">
+        <img src="/assets/table/bluediner.jpg" alt="Événements Communautaires" class="w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-all">
+          <div class="flex items-center justify-center h-full">
+            <p class="text-white text-lg font-bold">Événements</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="relative overflow-hidden aspect-w-4 aspect-h-3 hover:scale-105 transform transition-all duration-300">
+        <img src="/assets/table/clap.jpg" alt="Pop-Up Stores" class="w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-all">
+          <div class="flex items-center justify-center h-full">
+            <p class="text-white text-lg font-bold">Pop-Up Stores</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="relative overflow-hidden aspect-w-1 aspect-h-1 hover:scale-105 transform transition-all duration-300">
+        <img src="/assets/table/clac.jpg" alt="Points d'Information" class="w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-all">
+          <div class="flex items-center justify-center h-full">
+            <p class="text-white text-lg font-bold">Points d'Information</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="relative overflow-hidden aspect-w-16 aspect-h-9 hover:scale-105 transform transition-all duration-300">
+        <img src="/assets/table/lightup.jpg" alt="Urban Art" class="w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-all">
+          <div class="flex items-center justify-center h-full">
+            <p class="text-white text-lg font-bold">Urban Art</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 5 -->
+      <div class="relative overflow-hidden aspect-w-2 aspect-h-3 hover:scale-105 transform transition-all duration-300">
+        <img src="/assets/table/montgolf.jpg" alt="Public Space" class="w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-all">
+          <div class="flex items-center justify-center h-full">
+            <p class="text-white text-lg font-bold">Public Space</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image 6 -->
+      <div class="relative overflow-hidden aspect-w-4 aspect-h-5 hover:scale-105 transform transition-all duration-300">
+        <img src="/assets/table/pontivy.jpg" alt="Street Design" class="w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-all">
+          <div class="flex items-center justify-center h-full">
+            <p class="text-white text-lg font-bold">Street Design</p>
+          </div>
+        </div>
+      </div>
+         <!-- Image 7 -->
+      <div class="relative overflow-hidden aspect-w-4 aspect-h-5 hover:scale-105 transform transition-all duration-300">
+        <img src="/assets/table/yellowfred.jpg" alt="Street Design" class="w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-all">
+          <div class="flex items-center justify-center h-full">
+            <p class="text-white text-lg font-bold">Street Design</p>
+          </div>
+        </div>
+      </div>
+               <!-- Image  -->
+               <div class="relative overflow-hidden aspect-w-4 aspect-h-5 hover:scale-105 transform transition-all duration-300">
+        <img src="/assets/table/nina.jpg" alt="Street Design" class="w-full h-full object-cover">
+        <div class="overlay absolute inset-0 bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-all">
+          <div class="flex items-center justify-center h-full">
+            <p class="text-white text-lg font-bold">Street Design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Immersive Founder Section: Personal Story with Video -->
+  <section class="founder-section relative py-20 bg-gray-100">
+    <div class="container mx-auto flex items-center justify-center">
+      <div class="w-full md:w-1/2">
+        <h2 class="text-4xl font-bold text-center mb-6">Une idée de Fred Margot</h2>
+        <p class="text-lg text-center mb-6">"Je crois au pouvoir des espaces publics. C'est là que la magie de la ville se produit, et avec Pototop, je veux que chacun puisse y contribuer." - Fred Margot</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Call-to-Action Section: Vibrant Contact Block -->
+  <section class="cta-section py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center">
+    <h2 class="text-4xl font-bold mb-4">Prenez Contact avec Nous</h2>
+    <p class="text-xl mb-6">Nous sommes prêts à transformer vos idées en réalité urbaine. Contactez-nous pour des solutions sur mesure.</p>
+    <a href="tel:0670641722" class="text-lg px-10 py-4 bg-white text-black rounded-lg hover:bg-gray-300 transition-all">06.70.64.17.22</a>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section py-8 bg-black text-white text-center">
+    <p class="text-sm">Pototop© - Tous droits réservés - 2024</p>
+    <p class="text-xs">Site par <a href="https://guillaumelaine.com" class="text-blue-400 hover:underline">Gui</a></p>
+  </footer>
+</section>
 </template>
 
 <script>
@@ -88,13 +207,10 @@ import { ref } from 'vue';
 export default {
   name: 'Home',
   setup() {
- 
     function isEven(index) {
-  // Returns true for even indexes (which are odd-numbered products)
-  return index % 2 === 1;
-}
+      return index % 2 === 1;
+    }
 
-    // Method to generate a random color
     function getRandomColor() {
       const letters = '0123456789ABCDEF';
       let color = '#';
@@ -104,14 +220,12 @@ export default {
       return color;
     }
 
-    // Method to apply the hover effect
     function hoverEffect(event) {
       event.currentTarget.style.borderColor = getRandomColor();
       event.currentTarget.style.borderWidth = '2px';
       event.currentTarget.style.borderStyle = 'solid';
     }
 
-    // Method to remove the hover effect
     function removeHoverEffect(event) {
       event.currentTarget.style.borderColor = '';
       event.currentTarget.style.borderWidth = '';
@@ -119,26 +233,23 @@ export default {
     }
 
     const getImagePath = (imageFileName) => `/assets/table/${imageFileName}`;
-    const headerImageUrl = ref('/assets/paris.webp');
-
     const products = ref([
-{ name: 'Pototop High Flyer', description: 'A versatile table for urban spaces.', image: 'orangeboheme.jpg' },
-{ name: 'Pototop Keith Me', description: 'Pop, Top, Urbain, inspiré du travail de keith Haring', image: 'pototop-keith.png' },
-{ name: 'Pototop Classic', description: 'Combinaison d\'élégance et de fonctionnalité', image: 'pototop 2.jpg' },
-{ name: 'Pototop Eye', description: 'Tapez lui dans l\'oeil', image: 'pototop-eye.png' },
-{ name: 'Poto Splash', description: 'Attention, ca va mouiller', image: 'poto-splash.png' },
-{ name: 'Poto rizon', description: 'On va où aujourd\'hui', image: 'poto-solar.png' },
-{ name: 'Poto Pool', description: 'A la fraiche, décontracté', image: 'poto-pool.png' },
-{ name: 'Poto Top Striker', description: 'Plutôt 4-4-2 ou 4-3-3 ?', image: 'poto-platoche.png' },
-{ name: 'Poto Rose', description: 'Découvrez le avant tout le monde', image: 'poto-pink.png' },
-{ name: 'Poto Air Jourdain', description: 'Inspiré par la légende du basker', image: 'poto-michael.png' },
-{ name: 'Poto NFL', description: 'Yeeeha !', image: 'poto-gridiron.png' },
-{ name: 'Poto Noir', description: 'En avant, direction l\'infini', image: 'poto-blackhole.png' }
-]);
+
+      { name: 'Pototop Classic', image: 'bluediner.jpg' },
+
+      { name: 'Clic Clac', image: 'pontivy.jpg' },
+      // { name: 'Pototop High Flyer', image: 'clap.jpg' },
+      { name: 'Pototop Keith Me', image: 'clac.jpg' },
+      { name: 'Poto rizon', image: 'lightup.jpg' },
+      { name: 'Poto Splash', image: 'tennis.jpg' },
+  
+      { name: 'Poto Luncheon', image: 'nina.jpg' },
+      { name: 'Poto Rose', image: 'yellowfred.jpg' },
+      { name: 'Poto Air Jourdain', image: 'montgolf.jpg' },
+    ]);
 
     return {
       products,
-      headerImageUrl,
       getImagePath,
       hoverEffect,
       removeHoverEffect,
@@ -150,55 +261,86 @@ export default {
 
 
 
-
 <style>
+
+/* Text Shadow for better readability */
+.text-shadow {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Custom hover effect for modular interactivity */
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+}
 /* Masonry Grid Layout */
 .masonry-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 0px; /* Improved spacing for better readability */
 }
 
 /* Card General Styles */
 .card {
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0px;
+  margin: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
   transition: transform 0.3s ease;
-  overflow: hidden;
 }
 
-/* Specific Card Styles */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Full Image Card */
+.cover-full-div img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Header and Info Card Span */
 .header-card, .info-card {
   grid-column: span 2;
 }
-.cover-full-div img {
-  transition: opacity 0.5s ease;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.cover-full-div:hover .product-info {
-  opacity: 1;
-  visibility: visible; /* Ensure content is visible on hover */
-  /* Remove transform if not needed for a slide-up effect */
-}
-
+/* Product Info Hover Effect */
 .product-info {
   position: absolute;
-  width: 100%; /* Ensure full width coverage */
-  bottom: 0; /* Align to bottom */
+  width: 100%;
+  bottom: 0;
   left: 0;
-  background-color: rgba(255,255,255,0.9); /* Semi-transparent background */
-  transition: opacity 0.5s, visibility 0.5s; /* Smooth transition for visibility */
+  background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
-  visibility: hidden; /* Initially hidden */
-  padding: 1rem; /* Adequate padding for content */
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  padding: 1rem;
 }
 
-.product-card {
-  position: relative;
-  overflow: hidden;
+.product-card:hover .product-info {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Founder Card Styles */
+.info-card {
+  padding: 2rem;
+}
+
+.info-card h2, .info-card p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.info-card ul {
+  list-style-position: inside;
+  padding-left: 1rem;
 }
 
 /* Responsive Adjustments */
@@ -208,69 +350,16 @@ export default {
   }
 }
 
-/* Info Card Styles */
-.info-card {
-  padding: 2rem;
+/* Video Card Styles */
+.video-card {
+  grid-column: span 2; /* Make the video card span two columns */
+  padding: 0; /* No padding to make the video fully occupy the card */
+  background-color: transparent; /* Optional: Make background transparent */
 }
 
-.info-card h2, .info-card p, .info-card ul {
-  margin-bottom: 1rem;
-}
-
-.info-card ul {
-  list-style-type: disc;
-  list-style-position: inside;
-  padding-left: 1rem;
-}
-
-/* Highlighting Important Information */
-.highlight {
-  color: #007BFF; 
-  font-weight: bold;
-}
-
-/* Hover Effect for Cards */
-.card:hover {
-  transform: translateY(-5px); 
-}
-
-/* Styling for Important List Items */
-.info-card li strong {
-  font-weight: bold; 
-}
-
-/* Testimonial Card Styles */
-.testimonial-card {
-  display: flex;
-  align-items: center;
-}
-
-.testimonial-card img {
-  flex-shrink: 0; /* Prevent avatar from shrinking */
-  border-radius: 50%; /* Circle avatar */
-  margin-right: 1rem;
-}
-
-/* Social Links Styles */
-.social-links a img {
-  transition: transform 0.3s ease;
-}
-
-.social-links a:hover img {
-  transform: scale(1.1); /* Enlarge icons on hover */
-}
-
-/* Text and List Styles */
-.info-card h2 {
-  color: #333;
-}
-
-.info-card p, .info-card ul {
-  color: #666;
-  font-size: 14px;
-}
-
-.info-card ul {
-  list-style-position: inside;
+.video-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 0px; /* Optional: Add rounded corners to the video */
 }
 </style>
