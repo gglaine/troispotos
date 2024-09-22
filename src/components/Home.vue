@@ -70,7 +70,7 @@
         </div>
         <!-- Carte 3 -->
         <div class="card interactive-card bg-cover bg-center relative cursor-grab"
-             style="background-image: url('/assets/table/clac.jpg'); height: 400px;" draggable="true">
+             style="background-image: url('/assets/table/clac.webp'); height: 400px;" draggable="true">
           <div class="absolute inset-0 bg-black bg-opacity-20"></div>
           <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
             <div class="text-center text-white z-10">
@@ -170,8 +170,8 @@ export default {
   name: 'Home',
   setup() {
     const images = ref([
-      { src: 'clac.jpg', alt: 'Points d\'Information', caption: 'Clic' },
-      { src: 'clap.jpg', alt: 'Pop-Up Stores', caption: 'Clac !' },
+      { src: 'clac.webp', alt: 'Points d\'Information', caption: 'Clic' },
+      { src: 'clap.webp', alt: 'Pop-Up Stores', caption: 'Clac !' },
       { src: 'bluediner.jpg', alt: 'Événements Communautaires', caption: 'Table de restaurant' },
       { src: 'yellowfred.jpg', alt: 'Street Design', caption: 'Table Apéro' },
       { src: 'nightable.jpg', alt: 'Street Design', caption: 'Diner pour 2' },
@@ -179,8 +179,8 @@ export default {
       { src: 'shoot.jpg', alt: 'Street Design', caption: 'Bang' },
       { src: 'pontivy.jpg', alt: 'Street Design', caption: 'Série Paris 2024' },
       { src: 'montgolf.jpg', alt: 'Espace Public', caption: 'Esprit parisien' },
-      { src: 'shotsmg.png', alt: 'Street Design', caption: 'Festif' },
-      { src: 'nightgolf.jpg', alt: 'Street Design', caption: 'Lift off' },
+      { src: 'shotsmg.webp', alt: 'Street Design', caption: 'Festif' },
+      { src: 'mgnight.webp', alt: 'Street Design', caption: 'Lift off' },
       { src: 'lightup.jpg', alt: 'Art Urbain', caption: 'Lihgt up the streets' },
     ]);
 
