@@ -48,7 +48,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Carte 1 -->
         <div class="card interactive-card bg-cover bg-center relative cursor-grab"
-             style="background-image: url('/assets/table/clap.jpg'); height: 400px;" draggable="true">
+             style="background-image: url('/assets/table/compressed_clap.webp'); height: 400px;" draggable="true">
           <div class="absolute inset-0 bg-black bg-opacity-20"></div>
           <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
             <div class="text-center text-white z-10">
@@ -59,7 +59,7 @@
         </div>
         <!-- Carte 2 -->
         <div class="card interactive-card bg-cover bg-center relative cursor-grab"
-             style="background-image: url('/assets/table/pontivy.jpg'); height: 400px;" draggable="true">
+             style="background-image: url('/assets/table/compressed_pontivy.webp'); height: 400px;" draggable="true">
           <div class="absolute inset-0 bg-black bg-opacity-20"></div>
           <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
             <div class="text-center text-white z-10">
@@ -70,7 +70,7 @@
         </div>
         <!-- Carte 3 -->
         <div class="card interactive-card bg-cover bg-center relative cursor-grab"
-             style="background-image: url('/assets/table/clac.webp'); height: 400px;" draggable="true">
+             style="background-image: url('/assets/table/compressed_clac.webp'); height: 400px;" draggable="true">
           <div class="absolute inset-0 bg-black bg-opacity-20"></div>
           <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-all">
             <div class="text-center text-white z-10">
@@ -88,7 +88,7 @@
   <div
     class="parallax-background absolute top-0 left-0 w-full h-full"
     style="
-      background-image: url('/assets/table/pontivy.jpg');
+      background-image: url('/assets/table/compressed_pontivy.webp');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -170,32 +170,32 @@ export default {
   name: 'Home',
   setup() {
     const images = ref([
-      { src: 'clac.webp', alt: 'Points d\'Information', caption: 'Clic' },
-      { src: 'clap.webp', alt: 'Pop-Up Stores', caption: 'Clac !' },
-      { src: 'bluediner.jpg', alt: 'Événements Communautaires', caption: 'Table de restaurant' },
-      { src: 'yellowfred.jpg', alt: 'Street Design', caption: 'Table Apéro' },
-      { src: 'nightable.jpg', alt: 'Street Design', caption: 'Diner pour 2' },
-      { src: 'nina.jpg', alt: 'Street Design', caption: 'Accessoires' },
-      { src: 'shoot.jpg', alt: 'Street Design', caption: 'Bang' },
-      { src: 'pontivy.jpg', alt: 'Street Design', caption: 'Série Paris 2024' },
-      { src: 'montgolf.jpg', alt: 'Espace Public', caption: 'Esprit parisien' },
-      { src: 'shotsmg.webp', alt: 'Street Design', caption: 'Festif' },
-      { src: 'mgnight.webp', alt: 'Street Design', caption: 'Lift off' },
-      { src: 'lightup.jpg', alt: 'Art Urbain', caption: 'Lihgt up the streets' },
+      { src: 'compressed_clac.webp', alt: 'Points d\'Information', caption: 'Clic' },
+      { src: 'compressed_clap.webp', alt: 'Pop-Up Stores', caption: 'Clac !' },
+      { src: 'compressed_bluediner.webp', alt: 'Événements Communautaires', caption: 'Table de restaurant' },
+      { src: 'compressed_yellowfred.webp', alt: 'Street Design', caption: 'Table Apéro' },
+      { src: 'compressed_nightable.webp', alt: 'Street Design', caption: 'Diner pour 2' },
+      { src: 'compressed_nina.webp', alt: 'Street Design', caption: 'Accessoires' },
+      { src: 'compressed_shoot.webp', alt: 'Street Design', caption: 'Bang' },
+      { src: 'compressed_pontivy.webp', alt: 'Street Design', caption: 'Série Paris 2024' },
+      { src: 'compressed_montgolf.webp', alt: 'Espace Public', caption: 'Esprit parisien' },
+      { src: 'compressed_shotsmg.webp', alt: 'Street Design', caption: 'Festif' },
+      { src: 'compressed_mgnight.webp', alt: 'Street Design', caption: 'Lift off' },
+      { src: 'compressed_lightup.webp', alt: 'Art Urbain', caption: 'Lihgt up the streets' },
     ]);
 
     // Fonction pour obtenir le chemin de l'image
     const getImagePath = (imageFileName) => `/assets/table/${imageFileName}`;
 
     const products = ref([
-      { name: 'Pototop Classic', image: 'bluediner.jpg' },
-      { name: 'Clic Clac', image: 'pontivy.jpg' },
-      { name: 'Pototop Keith Me', image: 'clac.jpg' },
-      { name: 'Poto Rizon', image: 'lightup.jpg' },
-      { name: 'Poto Splash', image: 'tennis.jpg' },
-      { name: 'Poto Luncheon', image: 'nina.jpg' },
-      { name: 'Poto Rose', image: 'yellowfred.jpg' },
-      { name: 'Poto Air Jourdain', image: 'montgolf.jpg' },
+      { name: 'Pototop Classic', image: 'bluediner.webp' },
+      { name: 'Clic Clac', image: 'pontivy.webp' },
+      { name: 'Pototop Keith Me', image: 'clac.webp' },
+      { name: 'Poto Rizon', image: 'lightup.webp' },
+      { name: 'Poto Splash', image: 'tennis.webp' },
+      { name: 'Poto Luncheon', image: 'nina.webp' },
+      { name: 'Poto Rose', image: 'yellowfred.webp' },
+      { name: 'Poto Air Jourdain', image: 'montgolf.webp' },
     ]);
 
     function isEven(index) {
