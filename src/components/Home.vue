@@ -12,18 +12,19 @@
 
       <!-- Vidéo Version Mobile -->
       <video autoplay muted loop playsinline class="video-mobile absolute top-0 left-0 w-full h-full object-cover">
-        <source src="/pototop-google.mp4" type="video/mp4">
+        <source src="/tripcapcut.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la balise vidéo.
       </video>
 
       <div class="overlay absolute inset-0 bg-black opacity-10"></div>
       <div class="z-10 text-center absolute bottom-20 left-0 right-0">
-  <h1 class="text-3xl md:text-6xl font-bold mb-4 animate-fade-in">
-    <div class="w-full flex justify-center mb-4">
-      <img src="/assets/POTOSMILE-w.png" class="w-[200px] mx-auto">
-    </div>
-    <div class="text-2xl mt-0 italic font-thin">Au cœur de la ville</div>
-  </h1>
+        <h1 class="hidden md:block text-3xl md:text-6xl font-bold mb-4 animate-fade-in">
+  <div class="w-full flex justify-center mb-4">
+    <img src="/assets/POTOSMILE-w.png" class="w-[200px] mx-auto">
+  </div>
+  <div class="text-2xl mt-0 italic font-thin">Au cœur de la ville</div>
+</h1>
+
   <p class="text-xl md:text-2xl mb-8 animate-fade-in delay-1s mt-8 bg-white text-black h-12 w-full flex items-center justify-around">
     Mobilier urbain et design 
   </p>
