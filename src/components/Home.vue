@@ -369,6 +369,7 @@ export default {
 @media (max-width: 768px) {
   .parallax-background {
     background-attachment: scroll;
+  }
   .parallax-background {
     background-attachment: scroll;
   }
