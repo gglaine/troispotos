@@ -230,23 +230,48 @@
       </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section
-      class="cta-section py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center p-3"
-    >
-      <h2 class="text-2xl md:text-4xl font-bold mb-4">
-        Prenez Contact avec Nous
-      </h2>
-      <p class="text-2xl mb-12">
-        Nous sommes prêts à transformer vos idées en réalité urbaine. Contactez-nous
-        pour des solutions sur mesure.
-      </p>
-      <a
-        href="tel:0670641722"
-        class="text-lg px-10 py-4 bg-white text-black rounded-lg hover:bg-gray-300 transition-all"
+    <!-- === Contact Section === -->
+    <section id="contact" class="py-20 bg-gray-100">
+      <h2 class="text-3xl text-center font-bold mb-8">Contactez-nous</h2>
+
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        class="flex flex-col space-y-4 max-w-md mx-auto p-4 bg-white rounded-lg shadow-md"
       >
-        06.70.64.17.22
-      </a>
+        <input type="hidden" name="form-name" value="contact" />
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Votre nom"
+          required
+          class="p-2 border rounded"
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Votre email"
+          required
+          class="p-2 border rounded"
+        />
+
+        <textarea
+          name="message"
+          placeholder="Votre message"
+          required
+          class="p-2 border rounded"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-all"
+        >
+          Envoyer
+        </button>
+      </form>
     </section>
 
     <!-- Footer -->
@@ -271,6 +296,68 @@ import { ref } from 'vue';
 export default {
   name: 'Home',
   setup() {
+    const images = ref([
+  {
+    src: 'compressed_clac.webp',
+    alt: "Points d'Information",
+    caption: 'Clic',
+  },
+  {
+    src: 'compressed_clap.webp',
+    alt: 'Pop-Up Stores',
+    caption: 'Clac !',
+  },
+  {
+    src: 'compressed_bluediner.webp',
+    alt: 'Événements Communautaires',
+    caption: 'Table de restaurant',
+  },
+  {
+    src: 'compressed_yellowfred.webp',
+    alt: 'Design Urbain',
+    caption: 'Table Apéro',
+  },
+  {
+    src: 'compressed_nightable.webp',
+    alt: 'Dîner pour deux',
+    caption: 'Diner pour 2',
+  },
+  {
+    src: 'compressed_nina.webp',
+    alt: 'Accessoires',
+    caption: 'Accessoires',
+  },
+  {
+    src: 'compressed_shoot.webp',
+    alt: 'Street Art',
+    caption: 'Bang',
+  },
+  {
+    src: 'compressed_pontivy.webp',
+    alt: 'Série Paris 2024',
+    caption: 'Série Paris 2024',
+  },
+  {
+    src: 'compressed_montgolf.webp',
+    alt: 'Esprit parisien',
+    caption: 'Esprit parisien',
+  },
+  {
+    src: 'compressed_shotsmg.webp',
+    alt: 'Moments Festifs',
+    caption: 'Festif',
+  },
+  {
+    src: 'compressed_mgnight.webp',
+    alt: 'Décollage',
+    caption: 'Lift off',
+  },
+  {
+    src: 'compressed_lightup.webp',
+    alt: 'Illuminez les rues',
+    caption: 'Light up the streets',
+  },
+]);
 
 
     useHead({
@@ -319,7 +406,6 @@ export default {
     const getImagePath = (imageFileName) => `/assets/table/${imageFileName}`;
 
     return {
-      images,
       images,
       getImagePath,
     };
