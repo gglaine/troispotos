@@ -267,10 +267,25 @@
 
 <script>
 import { ref } from 'vue';
-
+    import { useHead } from '@vueuse/head'
 export default {
   name: 'Home',
   setup() {
+
+
+useHead({
+  title: 'Pototop - Mobilier Urbain Innovant pour la Ville',
+  meta: [
+    { name: 'description', content: 'Découvrez Pototop : tables et accessoires design pour transformer l’espace urbain en lieux de rencontre et d’événements.' },
+    { property: 'og:title', content: 'Pototop - Mobilier Urbain Innovant' },
+    { property: 'og:description', content: 'Tables et supports modulaires fixables sur potelets, pour créer des espaces dynamiques et conviviaux.' },
+    { property: 'og:image', content: '/assets/POTOSMILE-w.png' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://yourdomain.com/' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ],
+})
+
     const images = ref([
       {
         src: 'compressed_clac.webp',
