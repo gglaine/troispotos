@@ -235,43 +235,56 @@
       <h2 class="text-3xl text-center font-bold mb-8">Contactez-nous</h2>
 
       <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        class="flex flex-col space-y-4 max-w-md mx-auto p-4 bg-white rounded-lg shadow-md"
-      >
-        <input type="hidden" name="form-name" value="contact" />
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  @submit.prevent="handleSubmit"
+  class="flex flex-col space-y-4 max-w-md mx-auto p-4 bg-white rounded-lg shadow-md"
+>
+  <!-- Hidden fields for Netlify -->
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hidden">
+    <label>Ne pas remplir : <input name="bot-field" /></label>
+  </p>
 
-        <input
-          type="text"
-          name="name"
-          placeholder="Votre nom"
-          required
-          class="p-2 border rounded"
-        />
+  <!-- Visible fields -->
+  <input
+    type="text"
+    name="name"
+    placeholder="Votre nom"
+    required
+    class="p-2 border rounded"
+  />
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Votre email"
-          required
-          class="p-2 border rounded"
-        />
+  <input
+    type="email"
+    name="email"
+    placeholder="Votre email"
+    required
+    class="p-2 border rounded"
+  />
 
-        <textarea
-          name="message"
-          placeholder="Votre message"
-          required
-          class="p-2 border rounded"
-        ></textarea>
+  <textarea
+    name="message"
+    placeholder="Votre message"
+    required
+    class="p-2 border rounded"
+  ></textarea>
 
-        <button
-          type="submit"
-          class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-all"
-        >
-          Envoyer
-        </button>
-      </form>
+  <button
+    type="submit"
+    class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-all"
+  >
+    Envoyer
+  </button>
+</form>
+
+<!-- Success Message -->
+<div v-if="formSubmitted" class="text-center text-xl text-green-600 mt-8">
+  🎉 Merci pour votre message ! Nous vous répondrons très vite.
+</div>
+
     </section>
 
     <!-- Footer -->
@@ -402,12 +415,32 @@ export default {
   ]
 })
 
+const formSubmitted = ref(false);
+
+const handleSubmit = async (event) => {
+  const form = event.target;
+  const formData = new FormData(form);
+
+  try {
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams([...formData]).toString(), // IMPORTANT: URL encode!
+    });
+    formSubmitted.value = true;
+    form.reset(); // Reset form fields if you want
+  } catch (error) {
+    alert('Erreur d’envoi du formulaire. Merci de réessayer.');
+  }
+};
 
     const getImagePath = (imageFileName) => `/assets/table/${imageFileName}`;
 
     return {
       images,
       getImagePath,
+      formSubmitted,
+      handleSubmit,
     };
   },
 };
