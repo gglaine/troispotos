@@ -273,7 +273,7 @@ export default {
   setup() {
 
 
-useHead({
+    useHead({
   title: 'Pototop - Mobilier Urbain Innovant pour la Ville',
   meta: [
     { name: 'description', content: 'Découvrez Pototop : tables et accessoires design pour transformer l’espace urbain en lieux de rencontre et d’événements.' },
@@ -284,70 +284,37 @@ useHead({
     { property: 'og:url', content: 'https://pototop.fr/' },
     { name: 'twitter:card', content: 'summary_large_image' },
   ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: `
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Pototop - Mobilier Urbain et Supports pour Potelets",
+        "image": [
+          "https://pototop.fr/assets/POTOSMILE-w.png",
+          "https://pototop.fr/assets/table/compressed_clap.webp",
+          "https://pototop.fr/assets/table/compressed_pontivy.webp"
+        ],
+        "description": "Découvrez Pototop : mobilier urbain innovant avec tables et accessoires design fixables sur potelets en 2 clics pour transformer l'espace urbain.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Pototop"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://pototop.fr/",
+          "priceCurrency": "EUR",
+          "price": "Custom",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+      `,
+    }
+  ]
 })
 
-    const images = ref([
-      {
-        src: 'compressed_clac.webp',
-        alt: 'Points d\'Information',
-        caption: 'Clic',
-      },
-      {
-        src: 'compressed_clap.webp',
-        alt: 'Pop-Up Stores',
-        caption: 'Clac !',
-      },
-      {
-        src: 'compressed_bluediner.webp',
-        alt: 'Événements Communautaires',
-        caption: 'Table de restaurant',
-      },
-      {
-        src: 'compressed_yellowfred.webp',
-        alt: 'Design Urbain',
-        caption: 'Table Apéro',
-      },
-      {
-        src: 'compressed_nightable.webp',
-        alt: 'Dîner pour deux',
-        caption: 'Diner pour 2',
-      },
-      {
-        src: 'compressed_nina.webp',
-        alt: 'Accessoires',
-        caption: 'Accessoires',
-      },
-      {
-        src: 'compressed_shoot.webp',
-        alt: 'Street Art',
-        caption: 'Bang',
-      },
-      {
-        src: 'compressed_pontivy.webp',
-        alt: 'Série Paris 2024',
-        caption: 'Série Paris 2024',
-      },
-      {
-        src: 'compressed_montgolf.webp',
-        alt: 'Esprit parisien',
-        caption: 'Esprit parisien',
-      },
-      {
-        src: 'compressed_shotsmg.webp',
-        alt: 'Moments Festifs',
-        caption: 'Festif',
-      },
-      {
-        src: 'compressed_mgnight.webp',
-        alt: 'Décollage',
-        caption: 'Lift off',
-      },
-      {
-        src: 'compressed_lightup.webp',
-        alt: 'Illuminez les rues',
-        caption: 'Light up the streets',
-      },
-    ]);
 
     const getImagePath = (imageFileName) => `/assets/table/${imageFileName}`;
 
