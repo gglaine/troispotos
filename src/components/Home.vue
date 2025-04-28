@@ -281,7 +281,7 @@ useHead({
     { property: 'og:description', content: 'Tables et supports modulaires fixables sur potelets, pour créer des espaces dynamiques et conviviaux.' },
     { property: 'og:image', content: '/assets/POTOSMILE-w.png' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://yourdomain.com/' },
+    { property: 'og:url', content: 'https://pototop.fr/' },
     { name: 'twitter:card', content: 'summary_large_image' },
   ],
 })
