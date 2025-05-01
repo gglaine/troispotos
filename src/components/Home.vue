@@ -26,24 +26,87 @@
       </div>
     </section>
 
-    <!-- Success Stories Section -->
-    <section class="py-20 bg-white text-center">
-      <h2 class="text-3xl md:text-5xl font-bold mb-12">Ils ont changé leur ville avec Pototop</h2>
-      <div class="grid gap-8 md:grid-cols-3 px-4">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Place Sainte-Cécile, Bordeaux</h3>
-          <p class="text-gray-700">De simples potelets à un lieu de rencontre vivant.</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Marché de Noël, Pontivy</h3>
-          <p class="text-gray-700">+37% de visite grâce aux installations Pototop.</p>
-        </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold mb-2">Festival "Rues en Folie", Paris</h3>
-          <p class="text-gray-700">Le Pototop a redonné vie à tout un quartier.</p>
-        </div>
-      </div>
-    </section>
+    <section class="py-16 px-6 text-center bg-gray-100">
+  <h2 class="text-3xl font-bold mb-4">Accessibilité sans compromis</h2>
+  <p class="max-w-xl mx-auto text-lg mb-6">
+    Nos tables innovantes sont conçues sans pieds gênants, permettant aux personnes en fauteuil roulant de s'installer confortablement en glissant leur fauteuil sous la table.
+  </p>
+  <p class="max-w-xl mx-auto text-lg">
+    Déjà appréciées devant <strong>Les Mondes Bohèmes</strong>, rue des Vignoles à Paris, par une cliente en fauteuil roulant.
+  </p>
+</section>
+
+<section id="gallery" class="py-20 bg-white p-4 text-center">
+  <h2 class="text-3xl md:text-5xl font-bold mb-12">Nos Réalisations Pototop</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_bluediner.webp" alt="Installation Pototop Bluediner" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_clac.webp" alt="Installation Pototop Clac" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_clap.webp" alt="Installation Pototop Clap" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_fred.webp" alt="Installation Pototop Fred" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_fredatable.webp" alt="Installation Pototop Fredatable" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_fredgarance.webp" alt="Installation Pototop Fredgarance" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_greenred.webp" alt="Installation Pototop Greenred" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_lightup.webp" alt="Installation Pototop Lightup" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_mgnight.webp" alt="Installation Pototop MG Night" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_montgolf.webp" alt="Installation Pototop Montgolf" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_nightable.webp" alt="Installation Pototop Nightable" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_nightgolf.webp" alt="Installation Pototop Nightgolf" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_nina.webp" alt="Installation Pototop Nina" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_orangeboheme.webp" alt="Installation Pototop Orange Bohème" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_pontivy.webp" alt="Installation Pototop Pontivy" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_shoot.webp" alt="Installation Pototop Shoot" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_shotsmg.webp" alt="Installation Pototop Shots MG" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_table-isometric.webp" alt="Installation Pototop Table Isométrique" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_tablejungle.webp" alt="Installation Pototop Table Jungle" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_tennis.webp" alt="Installation Pototop Tennis" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_yellowfred.webp" alt="Installation Pototop Yellow Fred" class="w-full h-full object-cover">
+    </div>
+
+  </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-100">
