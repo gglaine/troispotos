@@ -12,7 +12,8 @@
     "@vueuse/core": "^10.9.0",
     "@vueuse/head": "^2.0.0",
     "git-filter-repo": "^0.0.30",
-    "vue": "^3.4.15"
+    "vue": "^3.4.15",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",

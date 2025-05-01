@@ -107,6 +107,23 @@
   </div>
 </section>
 
+<!-- Partenaires Section -->
+<section class="bg-white py-16 text-center px-4">
+  <h2 class="text-3xl md:text-4xl font-bold mb-6">Vous êtes une collectivité, un lieu ou un mécène&nbsp;?</h2>
+  <p class="text-lg mb-6 max-w-2xl mx-auto">
+    Pototop est un projet ouvert aux collaborations : installations en ville, projets culturels, expérimentations sur l’espace public.
+  </p>
+  <p class="text-md mb-8 max-w-xl mx-auto">
+    Nous cherchons des partenaires engagés pour inventer la ville de demain avec nous. Contactez-nous ou découvrez comment nous soutenir :
+  </p>
+  <router-link
+    to="/dossier"
+    class="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+  >
+    ➤ En savoir plus / Nous soutenir
+  </router-link>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-100">
