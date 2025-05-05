@@ -1,14 +1,15 @@
 <template>
   <main class="homepage-experience relative overflow-hidden">
     <!-- Hero Manifesto Section -->
-    <header class="hero-section relative h-screen bg-black text-white flex flex-col items-center justify-center text-center px-4">
-      <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover opacity-30" aria-label="Background urban environment video">
+    <header class="hero-section relative h-screen bg-black text-white flex flex-col items-center justify-end text-center px-4 pb-12">
+      <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover opacity-70" aria-label="Background urban environment video">
         <source src="/v92.mp4" type="video/mp4" />
       </video>
       <div class="relative z-10">
         <img src="/assets/POTOSMILE-w.png" alt="Logo Pototop" class="w-[200px] mx-auto mb-6" />
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">Pototop</h1>
-        <h2 class="text-2xl md:text-3xl italic font-light animate-fade-in-up">Réinventez la Rue. Libérez l'Espace Public. Inspirez la Ville.</h2>
+        <h2 class="text-2xl md:text-3xl italic font-light animate-fade-in-up">
+          Hackez le mobilier urbain. Recréez la ville. Partagez l’espace.
+        </h2>
         <div class="mt-8 flex flex-col md:flex-row gap-4 justify-center">
           <a href="#features" class="px-6 py-3 bg-white text-black rounded-lg font-bold hover:bg-gray-200 transition">Explorez les Possibilités</a>
           <a href="#contact" class="px-6 py-3 border border-white rounded-lg font-bold hover:bg-white hover:text-black transition">Démarrez Votre Projet Urbain</a>
@@ -26,109 +27,203 @@
       </div>
     </section>
 
-    <section class="py-16 px-6 text-center bg-gray-100">
-  <h2 class="text-3xl font-bold mb-4">Accessibilité sans compromis</h2>
-  <p class="max-w-xl mx-auto text-lg mb-6">
-    Nos tables innovantes sont conçues sans pieds gênants, permettant aux personnes en fauteuil roulant de s'installer confortablement en glissant leur fauteuil sous la table.
-  </p>
-  <p class="max-w-xl mx-auto text-lg">
-    Déjà appréciées devant <strong>Les Mondes Bohèmes</strong>, rue des Vignoles à Paris, par une cliente en fauteuil roulant.
-  </p>
+    <!-- Pourquoi Pototop Section -->
+    <section class="py-20 bg-black text-white px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">Pourquoi Pototop&nbsp;?</h2>
+      <p class="max-w-3xl mx-auto text-lg font-light">
+        Aujourd’hui, les potelets dessinent nos rues. Pototop les détourne pour créer des <strong>espaces conviviaux, inclusifs et éphémères</strong>.
+        Avec son système breveté, ses objets design, et sa vision ludique de l’espace public, Pototop transforme le mobilier urbain en terrain de jeu citoyen.
+      </p>
+    </section>
+
+
+<!-- Accessibility Section -->
+<section class="py-20 bg-gray-100 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    
+    <!-- 📸 Image à gauche -->
+    <div class="w-full">
+      <img
+        src="/assets/PMRfriendly.jpg"
+        alt="Table Pototop accessible aux fauteuils roulants"
+        class="max-w-56 h-auto rounded-lg shadow-md"
+      />
+    </div>
+
+    <!-- 📝 Texte à droite -->
+    <div class="text-center md:text-left">
+      <h2 class="text-3xl font-bold mb-6">♿ Accessibilité sans compromis</h2>
+
+      <p class="text-lg mb-4 text-gray-700">
+        Nos tables innovantes sont conçues <strong>sans pieds gênants</strong>, permettant aux personnes en <strong>fauteuil roulant</strong> de s’installer confortablement.
+        Chaque module favorise une <strong>mobilité fluide</strong> et une <strong>accessibilité urbaine inclusive</strong>. ✅
+      </p>
+
+      <p class="text-lg mb-4 text-gray-700">
+        Déjà adoptées devant 
+        <strong><a href="https://www.mondesbohemes.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">Les Mondes Bohèmes</a></strong>, 
+        rue des Vignoles à Paris, par une cliente en fauteuil roulant ravie de pouvoir partager un moment convivial. 🌆🪑
+      </p>
+
+      <p class="text-md text-gray-700">
+        Pototop, c’est aussi ça : <strong>rendre la rue accessible à toutes et tous</strong>.  
+        Nous réconcilions <strong>mobilité réduite</strong>, <strong>confort</strong> et <strong>design citoyen</strong>. 🌍✨
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<section id="gallery" class="py-20 bg-white p-4 text-center">
+
+    <!-- Gallery Section -->
+
+    <section id="gallery" class="py-20 bg-white p-4 text-center">
   <h2 class="text-3xl md:text-5xl font-bold mb-12">Nos Réalisations Pototop</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_bluediner.webp" alt="Installation Pototop Bluediner" class="w-full h-full object-cover">
-    </div>
+  <p class="max-w-3xl mx-auto text-lg font-light text-gray-700 mb-12">
+  Chaque installation Pototop est une scène à ciel ouvert, un geste urbain partagé, un détournement joyeux du quotidien.  
+  Découvrez comment nos modules transforment les potelets en tables, les rues en places, et les idées en espaces vivants.
+</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-3">
+
     <div class="rounded-lg overflow-hidden shadow-md">
       <img src="/assets/table/compressed_clac.webp" alt="Installation Pototop Clac" class="w-full h-full object-cover">
     </div>
     <div class="rounded-lg overflow-hidden shadow-md">
       <img src="/assets/table/compressed_clap.webp" alt="Installation Pototop Clap" class="w-full h-full object-cover">
     </div>
+
+  
     <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_fred.webp" alt="Installation Pototop Fred" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_fredatable.webp" alt="Installation Pototop Fredatable" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_fredgarance.webp" alt="Installation Pototop Fredgarance" class="w-full h-full object-cover">
+      <img src="/assets/table/compressed_bluediner.webp" alt="Installation Pototop Bluediner" class="w-full h-full object-cover">
     </div>
     <div class="rounded-lg overflow-hidden shadow-md">
       <img src="/assets/table/compressed_greenred.webp" alt="Installation Pototop Greenred" class="w-full h-full object-cover">
     </div>
     <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_lightup.webp" alt="Installation Pototop Lightup" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_mgnight.webp" alt="Installation Pototop MG Night" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_montgolf.webp" alt="Installation Pototop Montgolf" class="w-full h-full object-cover">
+      <img src="/assets/table/compressed_orangeboheme.webp" alt="Installation Pototop Orange Bohème" class="w-full h-full object-cover">
     </div>
     <div class="rounded-lg overflow-hidden shadow-md">
       <img src="/assets/table/compressed_nightable.webp" alt="Installation Pototop Nightable" class="w-full h-full object-cover">
     </div>
     <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_nightgolf.webp" alt="Installation Pototop Nightgolf" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
       <img src="/assets/table/compressed_nina.webp" alt="Installation Pototop Nina" class="w-full h-full object-cover">
     </div>
+
+
+
     <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_orangeboheme.webp" alt="Installation Pototop Orange Bohème" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_pontivy.webp" alt="Installation Pototop Pontivy" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_shoot.webp" alt="Installation Pototop Shoot" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_shotsmg.webp" alt="Installation Pototop Shots MG" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_table-isometric.webp" alt="Installation Pototop Table Isométrique" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_tablejungle.webp" alt="Installation Pototop Table Jungle" class="w-full h-full object-cover">
-    </div>
-    <div class="rounded-lg overflow-hidden shadow-md">
-      <img src="/assets/table/compressed_tennis.webp" alt="Installation Pototop Tennis" class="w-full h-full object-cover">
+      <img src="/assets/table/compressed_fredatable.webp" alt="Installation Pototop Fredatable" class="w-full h-full object-cover">
     </div>
     <div class="rounded-lg overflow-hidden shadow-md">
       <img src="/assets/table/compressed_yellowfred.webp" alt="Installation Pototop Yellow Fred" class="w-full h-full object-cover">
     </div>
+    <div class="rounded-lg overflow-hidden shadow-md">
+      <img src="/assets/table/compressed_fredgarance.webp" alt="Installation Pototop Fredgarance" class="w-full h-full object-cover">
+    </div>
+   
+</div>  
+  
+</section>
 
+
+
+<!-- Section Lumières & Ambiances Nocturnes -->
+<section id="luminaires" class="py-20 bg-black text-white px-6 text-center">
+  <h2 class="text-3xl md:text-5xl font-bold mb-6">💡 Luminaires & Ambiances Nocturnes</h2>
+  <p class="max-w-3xl mx-auto text-lg font-light mb-12 text-gray-300">
+    Quand la nuit tombe, Pototop s’illumine. Nos modules deviennent des balises poétiques,  
+    offrant des <strong>espaces lumineux partagés</strong>, sécurisants et spectaculaires.  
+    Parfaits pour les festivals, rues animées ou événements d’été. ✨🌃
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <img src="/assets/table/compressed_lightup.webp" alt="Installation Pototop Lightup nocturne" class="w-full h-full object-cover" />
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <img src="/assets/table/compressed_shotsmg.webp" alt="Installation Pototop Shots MG lumière" class="w-full h-full object-cover" />
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <img src="/assets/table/compressed_mgnight.webp" alt="Installation Pototop MG de nuit" class="w-full h-full object-cover" />
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <img src="/assets/table/compressed_montgolf.webp" alt="Installation Pototop Montgolf lumineuse" class="w-full h-full object-cover" />
+    </div>
   </div>
 </section>
 
-<!-- Partenaires Section -->
-<section class="bg-white py-16 text-center px-4">
-  <h2 class="text-3xl md:text-4xl font-bold mb-6">Vous êtes une collectivité, un lieu ou un mécène&nbsp;?</h2>
-  <p class="text-lg mb-6 max-w-2xl mx-auto">
-    Pototop est un projet ouvert aux collaborations : installations en ville, projets culturels, expérimentations sur l’espace public.
+
+<!-- Section Olympique : Jeux de Tables Paris 2024 -->
+<section id="paris2024" class="py-20 bg-white text-center px-6">
+  <h2 class="text-3xl md:text-5xl font-bold mb-6">🏅 Pototop x Paris 2024</h2>
+  <p class="max-w-3xl mx-auto text-lg font-light mb-12 text-gray-700">
+    À l’occasion des Jeux Olympiques de Paris 2024, Pototop réinvente la rue en **terrain de jeu citoyen**.  
+    Nos modules deviennent **tables de ping-pong urbaines**, **zones de tir** et **espaces ludiques partagés**.  
+    Une célébration du sport, de la créativité et de la convivialité dans l’espace public. 🏓🎯🇫🇷
   </p>
-  <p class="text-md mb-8 max-w-xl mx-auto">
-    Nous cherchons des partenaires engagés pour inventer la ville de demain avec nous. Contactez-nous ou découvrez comment nous soutenir :
-  </p>
-  <router-link
-    to="/dossier"
-    class="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-  >
-    ➤ En savoir plus / Nous soutenir
-  </router-link>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+  <div class="rounded-lg overflow-hidden shadow-lg h-64">
+    <img src="/assets/table/compressed_pontivy.webp" alt="Installation Pototop Pontivy - Paris 2024" class="w-full h-full object-cover" />
+  </div>
+  <div class="rounded-lg overflow-hidden shadow-lg h-64">
+    <img src="/assets/table/compressed_shoot.webp" alt="Installation Pototop Shoot - Jeux citoyens" class="w-full h-full object-cover" />
+  </div>
+  <div class="rounded-lg overflow-hidden shadow-lg h-64">
+    <img src="/assets/table/compressed_tennis.webp" alt="Installation Pototop Tennis urbain" class="w-full h-full object-cover" />
+  </div>
+</div>
+
+
 </section>
 
+
+    <!-- Section Manifeste Product Founder -->
+    <section class="bg-gray-900 text-white text-center px-6 py-20">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">Manifeste du Fondateur</h2>
+      <div class="flex flex-col items-center justify-center gap-8">
+   
+      <div>
+        <p class="max-w-3xl mx-auto text-lg italic mb-4">
+        Nous ne vendons pas simplement des tables ou des objets urbains. Nous proposons une <strong>nouvelle façon de vivre la rue</strong> : libre, partagée, expressive.
+      </p>
+      <p class="max-w-3xl mx-auto text-lg mb-4">
+        Chaque module Pototop est un <strong>acte poétique et politique</strong>. Une invitation à reprendre possession de l’espace public par le design, le jeu et la créativité. Chaque potelet devient un point d’ancrage pour un usage détourné, joyeux, utile.
+      </p>
+      <p class="max-w-3xl mx-auto text-lg">
+        En tant que fondateur, je reste à l’écoute du terrain, au contact de la ville, à l’écoute de vos idées. <strong>Pototop est vivant</strong> – et vous en êtes les co-auteurs.
+      </p>
+      </div>
+     
+      </div>
+
+
+
+     
+    </section>
+
+
+    <!-- Partners Section -->
+    <section class="bg-white py-16 text-center px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Vous êtes une collectivité, un lieu ou un mécène&nbsp;?</h2>
+      <p class="text-lg mb-6 max-w-2xl mx-auto">
+        Pototop est un projet ouvert aux collaborations : installations en ville, projets culturels, expérimentations sur l’espace public.
+      </p>
+      <p class="text-md mb-8 max-w-xl mx-auto">
+        Nous cherchons des partenaires engagés pour inventer la ville de demain avec nous. Contactez-nous ou découvrez comment nous soutenir :
+      </p>
+      <router-link
+        to="/dossier"
+        class="inline-block bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+      >
+        ➤ En savoir plus / Nous soutenir
+      </router-link>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-100">
       <h2 class="text-3xl md:text-5xl font-bold text-center mb-8">Votre projet urbain commence ici</h2>
-      <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+      <div class="max-w-full mx-auto bg-white p-8 rounded-lg shadow-md">
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="flex flex-col gap-4">
           <input type="hidden" name="form-name" value="contact" />
           <p class="hidden">
@@ -156,241 +251,7 @@
       <p class="text-xs mt-4">
         Site par <a href="https://guillaumelaine.com" class="text-blue-400 hover:underline">Gui</a>
       </p>
+      <p class="text-sm mt-4 italic">Partagez vos installations Pototop avec <strong>#Pototop</strong> sur Instagram pour apparaître sur notre page !</p>
     </footer>
   </main>
 </template>
-
-<script>
-import { ref } from 'vue';
-    import { useHead } from '@vueuse/head'
-export default {
-  name: 'Home',
-  setup() {
-    const images = ref([
-  {
-    src: 'compressed_clac.webp',
-    alt: "Points d'Information",
-    caption: 'Clic',
-  },
-  {
-    src: 'compressed_clap.webp',
-    alt: 'Pop-Up Stores',
-    caption: 'Clac !',
-  },
-  {
-    src: 'compressed_bluediner.webp',
-    alt: 'Événements Communautaires',
-    caption: 'Table de restaurant',
-  },
-  {
-    src: 'compressed_yellowfred.webp',
-    alt: 'Design Urbain',
-    caption: 'Table Apéro',
-  },
-  {
-    src: 'compressed_nightable.webp',
-    alt: 'Dîner pour deux',
-    caption: 'Diner pour 2',
-  },
-  {
-    src: 'compressed_nina.webp',
-    alt: 'Accessoires',
-    caption: 'Accessoires',
-  },
-  {
-    src: 'compressed_shoot.webp',
-    alt: 'Street Art',
-    caption: 'Bang',
-  },
-  {
-    src: 'compressed_pontivy.webp',
-    alt: 'Série Paris 2024',
-    caption: 'Série Paris 2024',
-  },
-  {
-    src: 'compressed_montgolf.webp',
-    alt: 'Esprit parisien',
-    caption: 'Esprit parisien',
-  },
-  {
-    src: 'compressed_shotsmg.webp',
-    alt: 'Moments Festifs',
-    caption: 'Festif',
-  },
-  {
-    src: 'compressed_mgnight.webp',
-    alt: 'Décollage',
-    caption: 'Lift off',
-  },
-  {
-    src: 'compressed_lightup.webp',
-    alt: 'Illuminez les rues',
-    caption: 'Light up the streets',
-  },
-]);
-
-
-    useHead({
-  title: 'Pototop - Mobilier Urbain Innovant pour la Ville',
-  meta: [
-  { 
-  name: 'description', 
-  content: "Découvrez Pototop : mobilier urbain innovant, supports design pour potelets et événements. Réinventez votre espace public dès aujourd'hui." 
-},
-        { 
-  property: 'og:title', 
-  content: "Pototop — Réinventez la Ville avec un Mobilier Urbain d'Exception" 
-}
-,
-{ 
-  property: 'og:description', 
-  content: "Transformez potelets et espaces publics avec Pototop : mobilier urbain créatif pour vos événements et aménagements." 
-}
-,        { property: 'og:image', content: '/assets/POTOSMILE-w.png' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://pototop.fr/' },
-        { name: 'twitter:card', content: 'summary_large_image' },
-      ],
-      script: [
-    {
-      type: 'application/ld+json',
-      children: `
-    {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "Pototop",
-      "url": "https://pototop.fr",
-      "logo": "https://pototop.fr/assets/POTOSMILE-w.png",
-      "description": "Pototop est un créateur de mobilier urbain innovant, spécialisé dans les supports design pour potelets et événements en extérieur.",
-      "founder": "Fred Margot",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "contact@pototop.fr",
-        "contactType": "customer support",
-        "areaServed": "FR",
-        "availableLanguage": ["fr", "en"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "FR"
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Tables et Supports Urbains Pototop",
-      "image": [
-        "https://pototop.fr/assets/POTOSMILE-w.png",
-        "https://pototop.fr/assets/table/compressed_clap.webp",
-        "https://pototop.fr/assets/table/compressed_pontivy.webp"
-      ],
-      "description": "Mobilier urbain innovant pour transformer l'espace public en lieux de rencontre : tables pour potelets, supports événementiels.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Pototop"
-      },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://pototop.fr/"
-      }
-    }
-  ]
-}
-      `,
-    }
-  ]
-})
-
-const formSubmitted = ref(false);
-
-const handleSubmit = async (event) => {
-  const form = event.target;
-  const formData = new FormData(form);
-
-  try {
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams([...formData]).toString(), // IMPORTANT: URL encode!
-    });
-    formSubmitted.value = true;
-    form.reset(); // Reset form fields if you want
-  } catch (error) {
-    alert('Erreur d’envoi du formulaire. Merci de réessayer.');
-  }
-};
-
-    const getImagePath = (imageFileName) => `/assets/table/${imageFileName}`;
-
-    return {
-      images,
-      getImagePath,
-      formSubmitted,
-      handleSubmit,
-    };
-  },
-};
-</script>
-
-<style scoped>
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-.animate-fade-in-up.delay-1s {
-  animation-delay: 1s;
-}
-
-@media (max-width: 768px) {
-  .parallax-background {
-    background-attachment: scroll;
-  }
-  .parallax-background {
-    background-attachment: scroll;
-  }
-}
-
-/* Text Shadow for Better Readability */
-.text-shadow {
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-}
-
-/* Hover Effect for Cards */
-.card:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
-}
-
-.card {
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Video Responsiveness */
-.video-mobile {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .video-desktop {
-    display: none;
-  }
-  .video-mobile {
-    display: block;
-}
-}
-</style>
