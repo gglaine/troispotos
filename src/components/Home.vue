@@ -43,11 +43,19 @@
     
     <!-- 📸 Image à gauche -->
     <div class="w-full">
-      <img
+      <div class="flex flex-row items-center justify-center gap-4">
+              <img
         src="/assets/PMRfriendly.jpg"
         alt="Table Pototop accessible aux fauteuils roulants"
         class="max-w-56 h-auto rounded-lg shadow-md"
       />
+      <img
+        src="/assets/PMRicon.png"
+        alt="Table Pototop accessible aux fauteuils roulants"
+        class="max-w-56 h-auto rounded-lg shadow-md"
+      />
+      </div>
+
     </div>
 
     <!-- 📝 Texte à droite -->
