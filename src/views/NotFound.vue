@@ -1,13 +1,28 @@
 <template>
-  <div
-    class="w-full h-screen"
-    style="background-image: url('/assets/astrowalk.gif'), linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc);
-           background-size: cover, 100% 100%;
-           background-repeat: no-repeat, no-repeat;
-           background-blend-mode: screen;
-           animation: wildGradient 15s ease infinite;"
-  >
-    <div class="flex flex-col items-center justify-center min-h-screen text-white text-center px-6 bg-black/60 backdrop-blur-sm">
+  <div class="relative w-full h-screen overflow-hidden">
+    <!-- 🎥 Video background (mobile only) -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover block sm:hidden"
+    >
+      <source src="/assets/astrowalk-mobile.mp4" type="video/mp4" />
+    </video>
+
+    <!-- 🖼️ Fallback background (GIF + gradient for desktop) -->
+    <div
+      class="absolute inset-0 hidden sm:block"
+      style="background-image: url('/assets/astrowalk.gif'), linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc);
+             background-size: cover, 100% 100%;
+             background-repeat: no-repeat, no-repeat;
+             background-blend-mode: screen;
+             animation: wildGradient 15s ease infinite;"
+    ></div>
+
+    <!-- 🔤 Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen text-white text-center px-6 bg-black/60 backdrop-blur-sm">
       <h1 class="text-[10rem] font-extrabold leading-none animate-pulse text-pink-500 drop-shadow-lg tracking-tight">
         404
       </h1>
@@ -24,14 +39,8 @@
         to="/"
         class="mt-4 inline-block bg-pink-500 hover:bg-pink-600 text-white text-lg sm:text-xl font-semibold px-8 py-4 rounded-full transition duration-300 shadow-lg"
       >
-        ↩ Retour à l’accueil
+       Retour à l’accueil 🚀 
       </router-link>
-
-      <div class="mt-16">
-        <svg class="w-24 h-24 animate-bounce opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
     </div>
   </div>
 </template>
